@@ -17,6 +17,8 @@ import { MediaCapture, MediaFile, CaptureError, CaptureVideoOptions } from '@ion
 })
 export class VideoPage {
 
+  public video: MediaFile[];
+
   constructor( private mediaCapture: MediaCapture) {
   }
 
@@ -24,10 +26,15 @@ export class VideoPage {
     let options: CaptureVideoOptions = { limit: 1 };
     this.mediaCapture.captureVideo(options)
     .then(
-      (data: MediaFile[]) => alert("Success :" + data),
+      (data: MediaFile[]) => {
+        alert("Success :" + data);
+        this.video = data;
+      },
       (err: CaptureError) => alert("Error :" + err)
     );
   }
+
+  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad VideoPage');

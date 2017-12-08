@@ -15,5 +15,7 @@
 
 
 <ion-content padding>
-	<button ion-button block (tap)="takeVideo()">Prendre une vidéo</button><br />
+  <button ion-button block (tap)="takeVideo()">Prendre une vidéo</button><br />
+  
+  <video [src]="video" *ngIf="video" />
 </ion-content>
