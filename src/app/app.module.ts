@@ -6,18 +6,25 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { CameraPage } from '../pages/camera/camera';
+import { GeolocalisationPage } from '../pages/geolocalisation/geolocalisation';
+import { VideoPage } from '../pages/video/video';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { Geolocation } from '@ionic-native/geolocation';
+import { MediaCapture } from '@ionic-native/media-capture';
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    CameraPage
+    CameraPage,
+    GeolocalisationPage,
+    VideoPage
   ],
   imports: [
     BrowserModule,
@@ -28,13 +35,17 @@ import { SocialSharing } from '@ionic-native/social-sharing';
     MyApp,
     HomePage,
     ListPage,
-    CameraPage
+    CameraPage,
+    GeolocalisationPage,
+    VideoPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Camera,
     SocialSharing,
+    Geolocation,
+    MediaCapture,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

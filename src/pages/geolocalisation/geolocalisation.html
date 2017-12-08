@@ -1,0 +1,24 @@
+<!--
+  Generated template for the GeolocalisationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Géolocalisation</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	<button ion-button block (tap)="geolocMe()">Géolocalise moi !</button>
+	<br />
+	<h3><u>Actuellement : </u></h3>
+	Latitude : {{ lati }} <br />
+	Longitude : {{ longi }} <br />
+	Précision : {{ accuracy }}<br /><br />
+</ion-content>

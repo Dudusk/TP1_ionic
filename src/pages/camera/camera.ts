@@ -26,6 +26,12 @@ export class CameraPage {
   constructor(private camera: Camera, private toastContro: ToastController, private socialSharing: SocialSharing) {
   }
 
+  /**
+   * Toast
+   * @param message 
+   * @param time 
+   * @param pos 
+   */
   createToast(message, time, pos){
     this.toast = this.toastContro.create({
         message: message,
