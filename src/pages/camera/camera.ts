@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, ToastController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 /**
  * Generated class for the CameraPage page.
@@ -22,7 +23,7 @@ export class CameraPage {
 
   public message: string;
 
-  constructor(private camera: Camera, private toastContro: ToastController) {
+  constructor(private camera: Camera, private toastContro: ToastController, private socialSharing: SocialSharing) {
   }
 
   createToast(message, time, pos){
@@ -34,7 +35,38 @@ export class CameraPage {
 
       this.toast.present();
   }
+  /**
+   * Social Sharing
+   */
+  shareEmail() {
+    this.socialSharing.canShareViaEmail().then(() => {
+      this.socialSharing.shareViaEmail(this.message, 'Subject', ['recipient@example.org'], [], null, this.base64Image).then(() => {
+      }).catch(() => {
+        console.error("Marche pas le mail");
+      });
+    }).catch(() => {
+    });
+  }
 
+  shareInsta() {
+    this.socialSharing.shareViaInstagram('Message', this.base64Image).then(() => {
+      console.log("success");
+    }).catch(() => {
+      console.error("Marche pas le Insta");
+    });
+  }
+
+  shareFb() {
+      this.socialSharing.shareViaFacebookWithPasteMessageHint(this.message, this.base64Image, null, this.message).then(() => {
+        console.log("success");
+      }).catch(() => {
+        console.error("Marche pas le Fb");
+      });
+  }
+
+  /**
+   * Camera
+   */
   screen(){
     this.camera.getPicture({
         destinationType: this.camera.DestinationType.DATA_URL,
