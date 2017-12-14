@@ -1,14 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {
-  GoogleMaps,
-  GoogleMap,
-  GoogleMapsEvent,
-  GoogleMapOptions,
-  CameraPosition,
-  MarkerOptions,
-  Marker
- } from '@ionic-native/google-maps';
+import { GoogleMaps, GoogleMap, GoogleMapsEvent,
+  VisibleRegion, ILatLng
+} from '@ionic-native/google-maps';
 
 /**
  * Generated class for the GooglemapPage page.
@@ -23,7 +17,7 @@ import {
   templateUrl: 'googlemap.html',
 })
 export class GooglemapPage {
-  map: GoogleMap;
+    map: GoogleMap;
   
     constructor(
       public navCtrl: NavController, private googleMaps: GoogleMaps) {  // <-- no longer need to define in constructor
@@ -34,7 +28,32 @@ export class GooglemapPage {
     }
     
     loadMap() {
-      this.map = this.googleMaps.create('map_canvas');
+      this.map = GoogleMaps.create('map_canvas');
+  
+      this.map.one(GoogleMapsEvent.MAP_READY).then(() => {
+        console.log("map is ready to use.");
+  
+        // Puts random markers on the map.
+        this.createMarkers();
+      });
+    }
+
+    createMarkers() {
+      let latLngBounds: VisibleRegion = this.map.getVisibleRegion();
+      let sw: ILatLng = latLngBounds.southwest;
+      let ne: ILatLng = latLngBounds.northeast;
+      let diffY: number = (ne.lat - sw.lat);
+      let diffX: number = (ne.lng - sw.lng);
+  
+      for (let i = 0; i < 100; i++) {
+        this.map.addMarker({
+          'position': {
+            'lat': sw.lat + diffY * Math.random(),
+            'lng': sw.lng  + diffX * Math.random()
+          }
+        });
+      }
+  
     }
   
     // loadMap() {
