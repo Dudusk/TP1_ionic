@@ -17,21 +17,18 @@ import { MediaCapture, MediaFile, CaptureError, CaptureVideoOptions } from '@ion
 })
 export class VideoPage {
 
-  //public video: MediaFile[];
+  public video: MediaFile[];
 
   constructor( private mediaCapture: MediaCapture) {
   }
 
   takeVideo(){
-    // let options: CaptureVideoOptions = { limit: 1 };
-    // this.mediaCapture.captureVideo(options)
-    // .then(
-    //   (data: MediaFile[]) => {
-    //     alert("Success :" + data);
-    //     this.video = data;
-    //   },
-    //   (err: CaptureError) => alert("Error :" + err)
-    // );
+    let options: CaptureVideoOptions = { limit: 1 };
+    this.mediaCapture.captureVideo(options)
+      .then(
+        (data: MediaFile[]) => console.log(data),
+        (err: CaptureError) => console.error(err)
+      );
   }
 
   
