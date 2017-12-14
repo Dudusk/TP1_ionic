@@ -26,18 +26,22 @@ export class GooglemapPage {
   map: GoogleMap;
   
     constructor(
-      public navCtrl: NavController) {  // <-- no longer need to define in constructor
+      public navCtrl: NavController, private googleMaps: GoogleMaps) {  // <-- no longer need to define in constructor
     }
   
-    ionViewDidLoad() {
+    ionViewLoaded() {
       this.loadMap();
     }
-  
+    
     loadMap() {
-      this.map = GoogleMaps.create('map_canvas');  // <-- changed
-      this.map.one(GoogleMapsEvent.MAP_READY).then(() => {
-        
-      });
+      this.map = this.googleMaps.create('map_canvas');
     }
+  
+    // loadMap() {
+    //   this.map = GoogleMaps.create('map_canvas');  // <-- changed
+    //   this.map.one(GoogleMapsEvent.MAP_READY).then(() => {
+    //     console.log("zer");
+    //   });
+    // }
 
 }
