@@ -1,5 +1,5 @@
 <!--
-  Generated template for the VideoPage page.
+  Generated template for the GooglemapPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -9,13 +9,11 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Vidéo</ion-title>
+    <ion-title>Google Maps</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-  <button ion-button block (tap)="takeVideo()">Prendre une vidéo</button><br />
-  
-  <video [src]="video" *ngIf="video"></video>
+  <div id="map_canvas"></div>  
 </ion-content>

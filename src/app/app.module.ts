@@ -8,6 +8,7 @@ import { ListPage } from '../pages/list/list';
 import { CameraPage } from '../pages/camera/camera';
 import { GeolocalisationPage } from '../pages/geolocalisation/geolocalisation';
 import { VideoPage } from '../pages/video/video';
+import { GooglemapPage } from '../pages/googlemap/googlemap';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -15,7 +16,10 @@ import { Camera } from '@ionic-native/camera';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { Geolocation } from '@ionic-native/geolocation';
 import { MediaCapture } from '@ionic-native/media-capture';
-
+import {
+  GoogleMaps,
+  GoogleMap
+ } from '@ionic-native/google-maps';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,8 @@ import { MediaCapture } from '@ionic-native/media-capture';
     ListPage,
     CameraPage,
     GeolocalisationPage,
-    VideoPage
+    VideoPage,
+    GooglemapPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,8 @@ import { MediaCapture } from '@ionic-native/media-capture';
     ListPage,
     CameraPage,
     GeolocalisationPage,
-    VideoPage
+    VideoPage,
+    GooglemapPage
   ],
   providers: [
     StatusBar,
@@ -46,6 +52,7 @@ import { MediaCapture } from '@ionic-native/media-capture';
     SocialSharing,
     Geolocation,
     MediaCapture,
+    GoogleMaps,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
