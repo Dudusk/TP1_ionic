@@ -16,8 +16,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 })
 export class BarcodeScannerPage {
 
-  private scannerDataText: any;
-  private scannerDataForm: any;
+  private scannerDataText: String;
+  private scannerDataForm: String;
   
   constructor(public barcode: BarcodeScanner) {
   }

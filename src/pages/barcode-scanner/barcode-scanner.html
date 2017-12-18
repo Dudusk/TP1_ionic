@@ -14,10 +14,21 @@
 
 
 <ion-content padding>
-  <div>
-    <button class="btn btn-info" (tap)="scanner()">Type</button><br />
-    Format : {{ scannerDataForm }}<br />
-    Texte : {{ scannerDataText }}
-
+  <button ion-button block (tap)="scanner()">Prendre une photo</button><br />
+  <div *ngIf="scannerDataForm">
+    <ion-item>
+      <ion-label>Format :</ion-label>
+      <ion-content>{{ scannerDataForm }}</ion-content>
+    </ion-item>
+    <ion-item>
+      <ion-label>Texte :</ion-label>
+      <ion-content>{{ scannerDataText }}</ion-content>
+    </ion-item>
   </div>
+  <div *ngIf="!scannerDataForm">
+    <ion-item>
+      <ion-label>Il n'y a rien à afficher pour l'instant.</ion-label>
+    </ion-item>
+  </div>
+  
 </ion-content>
