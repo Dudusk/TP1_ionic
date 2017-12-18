@@ -10,6 +10,7 @@ import { GeolocalisationPage } from '../pages/geolocalisation/geolocalisation';
 import { VideoPage } from '../pages/video/video';
 import { GooglemapPage } from '../pages/googlemap/googlemap';
 import { BarcodeScannerPage } from '../pages/barcode-scanner/barcode-scanner';
+import { CalendarPage } from '../pages/calendar/calendar';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,6 +20,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { MediaCapture } from '@ionic-native/media-capture';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { Calendar } from '@ionic-native/calendar';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     GeolocalisationPage,
     VideoPage,
     GooglemapPage,
-    BarcodeScannerPage
+    BarcodeScannerPage,
+    CalendarPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     GeolocalisationPage,
     VideoPage,
     GooglemapPage,
-    BarcodeScannerPage
+    BarcodeScannerPage,
+    CalendarPage
   ],
   providers: [
     StatusBar,
@@ -55,6 +59,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     MediaCapture,
     GoogleMaps,
     BarcodeScanner,
+    Calendar,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

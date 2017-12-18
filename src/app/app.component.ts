@@ -10,6 +10,7 @@ import { GeolocalisationPage } from '../pages/geolocalisation/geolocalisation';
 import { VideoPage } from '../pages/video/video';
 import { GooglemapPage } from '../pages/googlemap/googlemap';
 import { BarcodeScannerPage } from '../pages/barcode-scanner/barcode-scanner';
+import { CalendarPage } from '../pages/calendar/calendar';
 
 
 @Component({
@@ -33,7 +34,8 @@ export class MyApp {
       { title: 'Geolocalisation', component: GeolocalisationPage },
       { title: 'Video', component: VideoPage },
       { title: 'Google Maps', component: GooglemapPage },
-      { title: 'Scanner', component: BarcodeScannerPage }
+      { title: 'Scanner', component: BarcodeScannerPage },
+      { title: 'Calendrier', component: CalendarPage }
     ];
 
   }

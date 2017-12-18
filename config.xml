@@ -92,4 +92,5 @@
         <variable name="API_KEY_FOR_IOS" value="AIzaSyDaJxjyfHFQ0zLV_7qHEKpVp1d6FTr32sY" />
     </plugin>
     <plugin name="phonegap-plugin-barcodescanner" spec="^7.0.0" />
+    <plugin name="cordova-plugin-calendar" spec="^5.0.0" />
 </widget>
