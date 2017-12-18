@@ -17,6 +17,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 export class BarcodeScannerPage {
 
   private scannerDataText: any;
+  private scannerDataForm: any;
   
   constructor(public barcode: BarcodeScanner) {
   }
@@ -24,7 +25,8 @@ export class BarcodeScannerPage {
   scanner(){
     this.barcode.scan().then((barcodeData) => {
       // Success! Barcode data is here
-      this.scannerDataText = barcodeData;
+      this.scannerDataText = barcodeData.text;
+      this.scannerDataForm = barcodeData.format;
     }, (err) => {
          // An error occurred
     });
