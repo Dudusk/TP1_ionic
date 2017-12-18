@@ -65,8 +65,8 @@
             },
             "cordova-plugin-media-capture": {},
             "cordova-plugin-googlemaps": {
-                "API_KEY_FOR_ANDROID": "AIzaSyAbn-m1H_fVKpDeWu5HMc561SggGmOu0ns",
-                "API_KEY_FOR_IOS": "AIzaSyAbn-m1H_fVKpDeWu5HMc561SggGmOu0ns"
+                "API_KEY_FOR_ANDROID": "AIzaSyCh8hiwbCPVdSpJmmkqNVK3S5Fv-xsqjtE",
+                "API_KEY_FOR_IOS": "AIzaSyCh8hiwbCPVdSpJmmkqNVK3S5Fv-xsqjtE"
             },
             "phonegap-plugin-barcodescanner": {},
             "cordova-plugin-calendar": {},

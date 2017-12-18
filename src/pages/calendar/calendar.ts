@@ -25,6 +25,7 @@ export class CalendarPage {
     endDate: new Date(),
     info:""
    };
+   public calendarName: string;
 
   constructor(private calendar: Calendar, private toastContro: ToastController) {
   }
@@ -40,30 +41,29 @@ export class CalendarPage {
   }
 
   createCalendar(){
-    this.calendar.createCalendar('MyCalendar').then(
+    this.calendar.createCalendar(this.calendarName).then(
       (msg) => { 
-        console.log(msg + " calendrier créé" ); 
-        this.createToast("Calendrier créé " + msg, 3000, 'bottom');
+        console.log(msg + " calendrier créé "); 
+        this.createToast("Calendrier créé : " + msg + " nom : " + this.calendarName, 3000, 'bottom');
       },
       (err) => { 
         console.log(err + " calendrier failed"); 
-        this.createToast("Calendrier failed " + err, 3000, 'bottom');        
+        this.createToast("Calendrier failed : " + err, 5000, 'bottom');        
       }
     );
   }
   //titre?: string, location?: string, note?: string, start?: Date, end?: Date
   createEvent(){
-
     this.calendar.requestWritePermission()
     this.calendar.createEvent(this.appoiment.name, this.appoiment.number, this.appoiment.info,new Date( this.appoiment.startDate),new Date(this.appoiment.endDate)).then(
       (msg) => { 
         console.log(msg + " event créé"); 
-        this.createToast("event créé " + msg, 3000, 'bottom');
+        this.createToast("event créé : " + msg, 3000, 'bottom');
         this.calendar.openCalendar(this.appoiment.startDate);
       },
       (err) => { 
         console.log(err + " event failed"); 
-        this.createToast("event failed " + err, 3000, 'bottom');        
+        this.createToast("event failed : " + err, 5000, 'bottom');        
       }
     );
 

@@ -88,8 +88,8 @@
     </plugin>
     <plugin name="cordova-plugin-media-capture" spec="^2.0.0" />
     <plugin name="cordova-plugin-googlemaps" spec="^2.1.1">
-        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyAbn-m1H_fVKpDeWu5HMc561SggGmOu0ns" />
-        <variable name="API_KEY_FOR_IOS" value="AIzaSyAbn-m1H_fVKpDeWu5HMc561SggGmOu0ns" />
+        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyCh8hiwbCPVdSpJmmkqNVK3S5Fv-xsqjtE" />
+        <variable name="API_KEY_FOR_IOS" value="AIzaSyCh8hiwbCPVdSpJmmkqNVK3S5Fv-xsqjtE" />
     </plugin>
     <plugin name="phonegap-plugin-barcodescanner" spec="^7.0.0" />
     <plugin name="cordova-plugin-calendar" spec="^5.0.0" />
