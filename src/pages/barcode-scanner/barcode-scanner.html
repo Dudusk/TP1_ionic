@@ -21,13 +21,14 @@
       <ion-label>{{ format }}</ion-label>
       <!-- <ion-content>{{ scannerDataForm }}</ion-content> -->
     </ion-item>
-    <ion-item>
+    <ion-item class="item item-text-wrap">
       <ion-label>Texte :</ion-label>
-      <ion-label class="item item-text-wrap">{{ text }}</ion-label>
+      <ion-label>{{ text }}</ion-label>
       <!-- <ion-content>{{ scannerDataText }}</ion-content> -->
     </ion-item>
   </div>
-
+  <br />
+  
   <div *ngIf="text == null">
       <ion-label>Rien pour l'instant..</ion-label>
   </div>
