@@ -22,15 +22,16 @@ export class CalendarPage {
 
   createCalendar(){
     this.calendar.createCalendar('MyCalendar').then(
-      (msg) => { 
-        console.log(msg); 
-      },
-      (err) => { console.log(err); }
+      (msg) => { alert(msg + "calendrier créé" ); },
+      (err) => { alert(err + "calendrier failed"); }
     );
   }
 
   createEvent(titre?: string, location?: string, note?: string, start?: Date, end?: Date){
-    this.calendar.createEvent(titre, location, note, start, end);
+    this.calendar.createEvent(titre, location, note, start, end).then(
+      (msg) => { alert(msg + "Event créé"); },
+      (err) => { alert(err + "Event fail"); }
+    );
   }
 
   ionViewDidLoad() {
