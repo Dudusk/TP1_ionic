@@ -5,12 +5,13 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>calendar</ion-title>
-  </ion-navbar>
-
-</ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Calendrier</ion-title>
+    </ion-navbar>
+  </ion-header>
 
 
 <ion-content padding>
@@ -27,12 +28,8 @@
       <ion-input placeholder="Message" [(ngModel)]="appoiment.name"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label color="primary">Lieu :</ion-label>
-      <ion-input placeholder="Message" [(ngModel)]="calendarName"></ion-input>
-    </ion-item>
-    <ion-item>
       <ion-label color="primary">Notes :</ion-label>
-      <ion-input placeholder="Message" [(ngModel)]="calendarName"></ion-input>
+      <ion-input placeholder="Message" [(ngModel)]="appoiment.info"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -44,5 +41,5 @@
       <ion-label>Date de fin</ion-label>
       <ion-datetime displayFormat="DD MMM YY h:mm A" pickerFormat="DD MMM YY h mm A" [(ngModel)]="appoiment.endDate"></ion-datetime>
     </ion-item>
-    <button ion-button block (tap)="createEvent('Le titre', 'location', 'Quelques notes ici et la', '12/18/2017', '12/18/2017')">Créer l'éevent'</button><br />
+    <button ion-button block (tap)="createEvent()">Créer l'éevent'</button><br />
   </ion-content>
