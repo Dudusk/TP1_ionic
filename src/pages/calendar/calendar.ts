@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, ToastController } from 'ionic-angular';
 import { Calendar } from '@ionic-native/calendar';
 
 
@@ -17,20 +17,44 @@ import { Calendar } from '@ionic-native/calendar';
 })
 export class CalendarPage {
 
-  constructor(private calendar: Calendar) {
+  public toast: any;
+
+  constructor(private calendar: Calendar, private toastContro: ToastController) {
+  }
+
+  createToast(message, time, pos){
+    this.toast = this.toastContro.create({
+        message: message,
+        duration: time,
+        position: pos
+      });
+
+      this.toast.present();
   }
 
   createCalendar(){
     this.calendar.createCalendar('MyCalendar').then(
-      (msg) => { alert(msg + "calendrier créé" ); },
-      (err) => { alert(err + "calendrier failed"); }
+      (msg) => { 
+        console.log(msg + "calendrier créé" ); 
+        this.createToast("Calendrier créé", 3000, 'bottom');
+      },
+      (err) => { 
+        console.log(err + "calendrier failed"); 
+        this.createToast("Calendrier failed", 3000, 'bottom');        
+      }
     );
   }
 
   createEvent(titre?: string, location?: string, note?: string, start?: Date, end?: Date){
     this.calendar.createEvent(titre, location, note, start, end).then(
-      (msg) => { alert(msg + "Event créé"); },
-      (err) => { alert(err + "Event fail"); }
+      (msg) => { 
+        console.log(msg + "Event créé"); 
+        this.createToast("event failed", 3000, 'bottom');        
+      },
+      (err) => { 
+        console.log(err + "Event fail"); 
+        this.createToast("event failed", 3000, 'bottom');        
+      }
     );
   }
 
