@@ -20,4 +20,29 @@
     {{format}}<br />
 
   </div>
+
+
+  <button ion-button block (tap)="scanner()">Lancer le scanner..</button><br />
+  Format acceptés : 'QR_CODE' | 'DATA_MATRIX' | 'UPC_E' | 'UPC_A' | 'EAN_8' | 'EAN_13' | 'CODE_128' | 'CODE_39' | 'CODE_93' | 'CODABAR' 
+  <div *ngIf="text != null">
+    <ion-item>
+      <ion-label>Format :</ion-label>
+      <ion-content>{{ format }}</ion-content>
+      <!-- <ion-content>{{ scannerDataForm }}</ion-content> -->
+    </ion-item>
+    <ion-item>
+      <ion-label>Texte :</ion-label>
+      <ion-content>{{ text }}</ion-content>
+      <!-- <ion-content>{{ scannerDataText }}</ion-content> -->
+    </ion-item>
+  </div>
+
+  <div *ngIf="text == null">
+    <ion-item>
+      <ion-label>Il n'y a rien à afficher pour l'instant.</ion-label>
+    </ion-item>
+  </div>
+
+
+
 </ion-content>
