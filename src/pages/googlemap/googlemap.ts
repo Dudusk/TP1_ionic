@@ -40,7 +40,7 @@ export class GooglemapPage {
         }
       };
 
-      let elements: HTMLElement = document.getElementById('map');
+      let elements: HTMLElement = document.getElementById('map_canvas');
       this.map = GoogleMaps.create(elements, mapOptions);
 
       this.map.one(GoogleMapsEvent.MAP_READY)
