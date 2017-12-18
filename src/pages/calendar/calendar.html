@@ -4,8 +4,8 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header class="background">
-    <ion-navbar class="background">
+<ion-header>
+    <ion-navbar>
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
@@ -14,7 +14,7 @@
   </ion-header>
 
 
-<ion-content padding class="background">
+<ion-content padding>
     <h2>Section Calendrier</h2>
     <ion-item>
       <ion-label color="primary" floating>Nom du calendrier</ion-label>
@@ -42,4 +42,13 @@
       <ion-datetime displayFormat="DD MMM YY h:mm A" pickerFormat="DD MMM YY h mm A" [(ngModel)]="appoiment.endDate"></ion-datetime>
     </ion-item>
     <button ion-button block (tap)="createEvent()">Créer l'évent</button><br />
+
   </ion-content>
+
+  <ion-footer>
+    <ion-toolbar>
+        <button ion-button center color="dark" (tap)="listeCalendar()">
+            Liste des Calendriers
+        </button>
+    </ion-toolbar>
+  </ion-footer>

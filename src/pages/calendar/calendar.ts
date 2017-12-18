@@ -66,18 +66,17 @@ export class CalendarPage {
         this.createToast("event failed : " + err, 5000, 'bottom');        
       }
     );
+  }
 
-    
-    // this.calendar.createEvent(titre, location, note, start, end).then(
-    //   (msg) => { 
-    //     console.log(msg + "Event créé"); 
-    //     this.createToast("event failed" + msg, 3000, 'bottom');        
-    //   },
-    //   (err) => { 
-    //     console.log(err + "Event fail"); 
-    //     this.createToast("event failed" + err, 3000, 'bottom');        
-    //   }
-    // );
+  listeCalendar(){
+    this.calendar.listCalendars().then(
+      (msg) => {
+        this.createToast( msg, 10000, 'bottom');
+      },
+      (err) => {
+        this.createToast( err, 10000, 'bottom');
+      }
+    );
   }
 
   ionViewDidLoad() {
