@@ -16,15 +16,17 @@
 
 <ion-content padding>
   <button ion-button block (tap)="scanner()">Lancer le scanner..</button><br />
-  Format acceptés :
+  Format acceptés : 'QR_CODE' | 'DATA_MATRIX' | 'UPC_E' | 'UPC_A' | 'EAN_8' | 'EAN_13' | 'CODE_128' | 'CODE_39' | 'CODE_93' | 'CODABAR' 
   <div *ngIf="scannerDataForm != null">
     <ion-item>
       <ion-label>Format :</ion-label>
-      <ion-content>{{ scannerDataForm }}</ion-content>
+      <ion-content>{{ test.format }}</ion-content>
+      <!-- <ion-content>{{ scannerDataForm }}</ion-content> -->
     </ion-item>
     <ion-item>
       <ion-label>Texte :</ion-label>
-      <ion-content>{{ scannerDataText }}</ion-content>
+      <ion-content>{{ test.text }}</ion-content>
+      <!-- <ion-content>{{ scannerDataText }}</ion-content> -->
     </ion-item>
   </div>
   <div *ngIf="scannerDataForm == null">
@@ -39,12 +41,24 @@
       Apps Installed
     </ion-label></div><!----></div><div class="button-effect"></div></ion-list-header>
   
-    <ion-item class="item item-block item-ios"><ion-icon color="primary" item-start="" name="ionic" role="img" class="icon icon-ios icon-ios-primary ion-ios-ionic item-icon" aria-label="ionic"></ion-icon><div class="item-inner"><div class="input-wrapper"><ion-label class="label label-ios" id="lbl-10">Ionic View</ion-label><!----></div><button ion-button="" item-end="" outline="" class="disable-hover item-button button button-ios button-outline button-outline-ios"><span class="button-inner">Uninstall</span><div class="button-effect"></div></button><!----></div><div class="button-effect"></div></ion-item>
-    <ion-item class="item item-block item-ios"><ion-icon color="primary" item-start="" name="brush" role="img" class="icon icon-ios icon-ios-primary ion-ios-brush item-icon" aria-label="brush"></ion-icon><div class="item-inner"><div class="input-wrapper"><ion-label class="label label-ios" id="lbl-11">Ionic Creator</ion-label><!----></div><button ion-button="" item-end="" outline="" class="disable-hover item-button button button-ios button-outline button-outline-ios"><span class="button-inner">Uninstall</span><div class="button-effect"></div></button><!----></div><div class="button-effect"></div></ion-item>
-    <ion-item class="item item-block item-ios"><ion-icon color="dark" item-start="" name="logo-octocat" role="img" class="icon icon-ios icon-ios-dark ion-logo-octocat item-icon" aria-label="logo octocat"></ion-icon><div class="item-inner"><div class="input-wrapper"><ion-label class="label label-ios" id="lbl-12">Hubstruck</ion-label><!----></div><button ion-button="" item-end="" outline="" class="disable-hover item-button button button-ios button-outline button-outline-ios"><span class="button-inner">Uninstall</span><div class="button-effect"></div></button><!----></div><div class="button-effect"></div></ion-item>
-    <ion-item class="item item-block item-ios"><ion-icon color="danger" item-start="" name="paw" role="img" class="icon icon-ios icon-ios-danger ion-ios-paw item-icon" aria-label="paw"></ion-icon><div class="item-inner"><div class="input-wrapper"><ion-label class="label label-ios" id="lbl-13">Barkpark</ion-label><!----></div><button ion-button="" item-end="" outline="" class="disable-hover item-button button button-ios button-outline button-outline-ios"><span class="button-inner">Uninstall</span><div class="button-effect"></div></button><!----></div><div class="button-effect"></div></ion-item>
+    <ion-item class="item item-block item-ios">
+      <ion-icon color="primary" item-start="" name="ionic" role="img" class="icon icon-ios icon-ios-primary ion-ios-ionic item-icon" aria-label="ionic">
+      </ion-icon>
+      <div class="item-inner">
+        <div class="input-wrapper">
+          <ion-label class="label label-ios" id="lbl-10">Ionic View</ion-label>
+            <!---->
+        </div>
+        <button ion-button="" item-end="" outline="" class="disable-hover item-button button button-ios button-outline button-outline-ios">
+          <span class="button-inner">Uninstall</span>
+          <div class="button-effect"></div>
+        </button>
+            <!---->
+      </div>
+      <div class="button-effect"></div>
+    </ion-item>
   </ion-list>
-  
+
 </ion-content>
 
 

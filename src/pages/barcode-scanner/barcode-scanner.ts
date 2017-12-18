@@ -18,6 +18,7 @@ export class BarcodeScannerPage {
 
   private scannerDataText: string;
   private scannerDataForm: any;
+  public test : any;
   
   constructor(public barcode: BarcodeScanner) {
   }
@@ -25,8 +26,9 @@ export class BarcodeScannerPage {
   scanner(){
     this.barcode.scan().then((barcodeData) => {
       // Success! Barcode data is here
-      this.scannerDataText = barcodeData.text;
-      this.scannerDataForm = barcodeData.format;
+      //this.scannerDataText = barcodeData.text;
+      //this.scannerDataForm = barcodeData.format;
+      this.test = barcodeData;
     }, (err) => {
          // An error occurred
     });
