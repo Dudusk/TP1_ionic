@@ -14,14 +14,6 @@
 
 
 <ion-content padding>
-  <div>
-    <button (tap)="scanner()">type</button>
-    {{text}}<br />
-    {{format}}<br />
-
-  </div>
-
-
   <button ion-button block (tap)="scanner()">Lancer le scanner..</button><br />
   Format acceptés : 'QR_CODE' | 'DATA_MATRIX' | 'UPC_E' | 'UPC_A' | 'EAN_8' | 'EAN_13' | 'CODE_128' | 'CODE_39' | 'CODE_93' | 'CODABAR' 
   <div *ngIf="text != null">
@@ -39,10 +31,28 @@
 
   <div *ngIf="text == null">
     <ion-item>
-      <ion-label>Il n'y a rien à afficher pour l'instant.</ion-label>
+      <ion-label>Il n'y a rien à afficher pour l'instant..</ion-label>
     </ion-item>
   </div>
 
 
+
+  <ion-list class="list list-ios">
+      <ion-list-header class="item item-ios list-header list-header-ios"><div class="item-inner"><div class="input-wrapper"><!----><ion-label class="label label-ios">
+        Formats acceptés
+      </ion-label></div><!----></div><div class="button-effect"></div></ion-list-header>
+    
+      <ion-item class="item item-block item-ios">
+        <ion-icon color="primary" item-start="" name="ionic" role="img" class="icon icon-ios icon-ios-primary ion-ios-ionic item-icon" aria-label="ionic">
+        </ion-icon>
+        <div class="item-inner">
+          <div class="input-wrapper">
+            <ion-label class="label label-ios" id="lbl-10">QR_CODE</ion-label>
+              <!---->
+          </div>
+        </div>
+        <div class="button-effect"></div>
+      </ion-item>
+    </ion-list>
 
 </ion-content>
