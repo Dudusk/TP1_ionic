@@ -21,7 +21,7 @@ export class GooglemapPage {
     constructor() {
     }
   
-    ionViewLoaded() {
+    ionViewDidLoad() {
       console.log("Génération de la map..");
       this.createMap();
     }

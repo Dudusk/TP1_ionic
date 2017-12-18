@@ -42,12 +42,12 @@ export class CalendarPage {
   createCalendar(){
     this.calendar.createCalendar('MyCalendar').then(
       (msg) => { 
-        console.log(msg + "calendrier créé" ); 
-        this.createToast("Calendrier créé" + msg, 3000, 'bottom');
+        console.log(msg + " calendrier créé" ); 
+        this.createToast("Calendrier créé " + msg, 3000, 'bottom');
       },
       (err) => { 
-        console.log(err + "calendrier failed"); 
-        this.createToast("Calendrier failed" + err, 3000, 'bottom');        
+        console.log(err + " calendrier failed"); 
+        this.createToast("Calendrier failed " + err, 3000, 'bottom');        
       }
     );
   }
@@ -55,9 +55,16 @@ export class CalendarPage {
   createEvent(){
 
     this.calendar.requestWritePermission()
-    this.calendar.createEvent(this.appoiment.name, this.appoiment.number, this.appoiment.info,new Date( this.appoiment.startDate),new Date(this.appoiment.endDate));
-    alert('Data de début: ' + this.appoiment.startDate);
-    alert('Data de fin: ' + this.appoiment.endDate);
+    this.calendar.createEvent(this.appoiment.name, this.appoiment.number, this.appoiment.info,new Date( this.appoiment.startDate),new Date(this.appoiment.endDate)).then(
+      (msg) => { 
+        console.log(msg + " event créé" ); 
+        this.createToast("event créé " + msg, 3000, 'bottom');
+      },
+      (err) => { 
+        console.log(err + " event failed"); 
+        this.createToast("event failed " + err, 3000, 'bottom');        
+      }
+    );
 
     
     // this.calendar.createEvent(titre, location, note, start, end).then(
