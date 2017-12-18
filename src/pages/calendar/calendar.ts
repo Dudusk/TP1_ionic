@@ -36,11 +36,11 @@ export class CalendarPage {
     this.calendar.createCalendar('MyCalendar').then(
       (msg) => { 
         console.log(msg + "calendrier créé" ); 
-        this.createToast("Calendrier créé", 3000, 'bottom');
+        this.createToast("Calendrier créé" + msg, 3000, 'bottom');
       },
       (err) => { 
         console.log(err + "calendrier failed"); 
-        this.createToast("Calendrier failed", 3000, 'bottom');        
+        this.createToast("Calendrier failed" + err, 3000, 'bottom');        
       }
     );
   }
@@ -49,11 +49,11 @@ export class CalendarPage {
     this.calendar.createEvent(titre, location, note, start, end).then(
       (msg) => { 
         console.log(msg + "Event créé"); 
-        this.createToast("event failed", 3000, 'bottom');        
+        this.createToast("event failed" + msg, 3000, 'bottom');        
       },
       (err) => { 
         console.log(err + "Event fail"); 
-        this.createToast("event failed", 3000, 'bottom');        
+        this.createToast("event failed" + err, 3000, 'bottom');        
       }
     );
   }
