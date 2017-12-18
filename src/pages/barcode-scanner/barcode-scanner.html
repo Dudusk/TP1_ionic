@@ -5,13 +5,13 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>barcodeScanner</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Scanner de code</ion-title>
+    </ion-navbar>
+  </ion-header>
 
 <ion-content padding>
   <button ion-button block (tap)="scanner()">Lancer le scanner..</button><br />
@@ -21,14 +21,14 @@
       <ion-label>{{ format }}</ion-label>
       <!-- <ion-content>{{ scannerDataForm }}</ion-content> -->
     </ion-item>
-    <ion-item class="item item-text-wrap">
+    <ion-item text-wrap>
       <ion-label>Texte :</ion-label>
       <ion-label>{{ text }}</ion-label>
       <!-- <ion-content>{{ scannerDataText }}</ion-content> -->
     </ion-item>
   </div>
   <br />
-  
+
   <div *ngIf="text == null">
       <ion-label>Rien pour l'instant..</ion-label>
   </div>
@@ -40,7 +40,7 @@
       </ion-label>
     </ion-list-header>
     <ion-item *ngFor="let item of formats">
-        <ion-label class="label label-ios" id="lbl-10">{{ item.format }}</ion-label>
+        <ion-label class="label label-ios">{{ item.format }}</ion-label>
     </ion-item>
   </ion-list>
 
