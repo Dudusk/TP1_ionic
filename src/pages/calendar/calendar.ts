@@ -57,8 +57,9 @@ export class CalendarPage {
     this.calendar.requestWritePermission()
     this.calendar.createEvent(this.appoiment.name, this.appoiment.number, this.appoiment.info,new Date( this.appoiment.startDate),new Date(this.appoiment.endDate)).then(
       (msg) => { 
-        console.log(msg + " event créé" ); 
+        console.log(msg + " event créé"); 
         this.createToast("event créé " + msg, 3000, 'bottom');
+        this.calendar.openCalendar(this.appoiment.startDate);
       },
       (err) => { 
         console.log(err + " event failed"); 
