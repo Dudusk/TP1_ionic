@@ -5,17 +5,19 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>barcodeScanner</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Camera</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
-  <button ion-button block (tap)="scanner()">Prendre une photo</button><br />
-  <div *ngIf="scannerDataForm">
+  <button ion-button block (tap)="scanner()">Lancer le scanner..</button><br />
+  Format acceptés :
+  <div *ngIf="scannerDataForm != null">
     <ion-item>
       <ion-label>Format :</ion-label>
       <ion-content>{{ scannerDataForm }}</ion-content>
@@ -25,7 +27,7 @@
       <ion-content>{{ scannerDataText }}</ion-content>
     </ion-item>
   </div>
-  <div *ngIf="!scannerDataForm">
+  <div *ngIf="scannerDataForm == null">
     <ion-item>
       <ion-label>Il n'y a rien à afficher pour l'instant.</ion-label>
     </ion-item>
