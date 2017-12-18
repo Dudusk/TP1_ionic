@@ -18,6 +18,13 @@ import { Calendar } from '@ionic-native/calendar';
 export class CalendarPage {
 
   public toast: any;
+  appoiment = {
+    name: "",
+    number: "",
+    startDate: new Date(),
+    endDate: new Date(),
+    info:""
+   };
 
   constructor(private calendar: Calendar, private toastContro: ToastController) {
   }
@@ -44,18 +51,25 @@ export class CalendarPage {
       }
     );
   }
+  //titre?: string, location?: string, note?: string, start?: Date, end?: Date
+  createEvent(){
 
-  createEvent(titre?: string, location?: string, note?: string, start?: Date, end?: Date){
-    this.calendar.createEvent(titre, location, note, start, end).then(
-      (msg) => { 
-        console.log(msg + "Event créé"); 
-        this.createToast("event failed" + msg, 3000, 'bottom');        
-      },
-      (err) => { 
-        console.log(err + "Event fail"); 
-        this.createToast("event failed" + err, 3000, 'bottom');        
-      }
-    );
+    this.calendar.requestWritePermission()
+    this.calendar.createEvent(this.appoiment.name, this.appoiment.number, this.appoiment.info,new Date( this.appoiment.startDate),new Date(this.appoiment.endDate));
+    alert('Data de début: ' + this.appoiment.startDate);
+    alert('Data de fin: ' + this.appoiment.endDate);
+
+    
+    // this.calendar.createEvent(titre, location, note, start, end).then(
+    //   (msg) => { 
+    //     console.log(msg + "Event créé"); 
+    //     this.createToast("event failed" + msg, 3000, 'bottom');        
+    //   },
+    //   (err) => { 
+    //     console.log(err + "Event fail"); 
+    //     this.createToast("event failed" + err, 3000, 'bottom');        
+    //   }
+    // );
   }
 
   ionViewDidLoad() {

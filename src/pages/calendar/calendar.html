@@ -15,5 +15,14 @@
 titre?: string, location?: string, note?: string, start?: Date, end?: Date
 <ion-content padding>
     <button ion-button block (tap)="createCalendar()">Créer le calendrier</button><br />
+    <ion-item>
+      <ion-label>Data Inceput Programare</ion-label>
+        <ion-datetime displayFormat="DD MMM YY h:mm A" pickerFormat="DD MMM YY h mm A" [(ngModel)]="appoiment.startDate"></ion-datetime>
+      </ion-item>
+        
+      <ion-item>
+        <ion-label>Data Sfarsit Programare</ion-label>
+        <ion-datetime displayFormat="DD MMM YY h:mm A" pickerFormat="DD MMM YY h mm A" [(ngModel)]="appoiment.endDate"></ion-datetime>
+      </ion-item>
     <button ion-button block (tap)="createEvent('Le titre', 'location', 'Quelques notes ici et la', '12/18/2017', '12/18/2017')">Créer l'éevent'</button><br />
   </ion-content>
