@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, Platform } from 'ionic-angular';
 import { GoogleMaps, GoogleMap, GoogleMapsEvent,
   VisibleRegion, ILatLng
 } from '@ionic-native/google-maps';
@@ -17,23 +17,31 @@ import { GoogleMaps, GoogleMap, GoogleMapsEvent,
   templateUrl: 'googlemap.html',
 })
 export class GooglemapPage {
+
     map: GoogleMap;
   
     constructor(
-      public navCtrl: NavController, private googleMaps: GoogleMaps) {  // <-- no longer need to define in constructor
+      public navCtrl: NavController, private platform: Platform) {  // <-- no longer need to define in constructor
+      
+      this.platform.ready().then(() => this.loadMaps());
     }
   
     ionViewLoaded() {
-      this.loadMap();
+      console.log("gne")
+      // this.loadMap();
     }
-    
-    loadMap() {
+
+    loadMaps() {
+      this.createMap();
+    }
+
+
+    createMap() {
       this.map = GoogleMaps.create('map_canvas');
   
       this.map.one(GoogleMapsEvent.MAP_READY).then(() => {
         console.log("map is ready to use.");
   
-        // Puts random markers on the map.
         this.createMarkers();
       });
     }
@@ -53,8 +61,8 @@ export class GooglemapPage {
           }
         });
       }
-  
     }
+
   
     // loadMap() {
     //   this.map = GoogleMaps.create('map_canvas');  // <-- changed
