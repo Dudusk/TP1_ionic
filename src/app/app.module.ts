@@ -17,7 +17,7 @@ import { Camera } from '@ionic-native/camera';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { Geolocation } from '@ionic-native/geolocation';
 import { MediaCapture } from '@ionic-native/media-capture';
-import { GoogleMaps,GoogleMap } from '@ionic-native/google-maps';
+import { GoogleMaps } from '@ionic-native/google-maps';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 @NgModule({
