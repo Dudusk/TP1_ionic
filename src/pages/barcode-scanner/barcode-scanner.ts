@@ -18,6 +18,7 @@ export class BarcodeScannerPage {
 
   private text: string;
   private format: any;
+  formats: Array<{format: string}>;
 
   constructor(public barcode: BarcodeScanner) {
   }
@@ -32,8 +33,19 @@ export class BarcodeScannerPage {
     });
   }
   
-
   ionViewDidLoad() {
+    this.formats = [
+      {format: "QR_CODE"},
+      {format: "DATA_MATRIX"},
+      {format: "UPC_E"},
+      {format: "UPC_A"},
+      {format: "EAN_8"},
+      {format: "EAN_13"},
+      {format: "CODE_128"},
+      {format: "CODE_39"},
+      {format: "CODE_93"},
+      {format: "CODABAR"}
+    ];
     console.log('ionViewDidLoad BarcodeScannerPage');
   }
 
