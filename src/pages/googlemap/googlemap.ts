@@ -18,8 +18,7 @@ export class GooglemapPage {
 
     map: GoogleMap;
   
-    constructor() {  // <-- no longer need to define in constructor
-      
+    constructor() {
     }
   
     ionViewLoaded() {
@@ -46,7 +45,7 @@ export class GooglemapPage {
       this.map.one(GoogleMapsEvent.MAP_READY)
       .then(() => {
         console.log('Map is ready!');
-        this.createMarker();
+        //this.createMarker();
       });
 
     }
