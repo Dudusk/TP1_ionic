@@ -22,10 +22,10 @@
     </ion-item>
     <button ion-button block (tap)="createCalendar()">Créer le calendrier</button><br />
 
-    <div *ngIf="listesCalendar != null">
+    <div *ngIf="listesCalendar != ''">
       <h2>Liste des calendriers</h2>
       <ion-item *ngFor="let item of listesCalendar">
-        <ion-label color="primary">{{ item }}</ion-label>
+        <ion-label>{{ item }}</ion-label>
       </ion-item>
     </div>
 
