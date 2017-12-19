@@ -74,7 +74,7 @@ export class CalendarPage {
       (msg) => {
         this.createToast( msg, 10000, 'bottom');
         console.log(msg);
-        this.lecture = Object.keys(msg);
+        this.lecture = Object.keys(msg.calendarName);
       },
       (err) => {
         this.createToast( err, 10000, 'bottom');
