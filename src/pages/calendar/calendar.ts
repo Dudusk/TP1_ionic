@@ -26,6 +26,7 @@ export class CalendarPage {
     info:""
    };
    public calendarName: string;
+   public lecture: any;
 
   constructor(private calendar: Calendar, private toastContro: ToastController) {
   }
@@ -72,6 +73,8 @@ export class CalendarPage {
     this.calendar.listCalendars().then(
       (msg) => {
         this.createToast( msg, 10000, 'bottom');
+        console.log(msg);
+        this.lecture = Object.keys(msg);
       },
       (err) => {
         this.createToast( err, 10000, 'bottom');
