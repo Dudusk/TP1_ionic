@@ -22,6 +22,14 @@
     </ion-item>
     <button ion-button block (tap)="createCalendar()">Créer le calendrier</button><br />
 
+    <div *ngIf="listesCalendar != null">
+      <h2>Liste des calendriers</h2>
+      <ion-item *ngFor="let item of listesCalendar">
+        <ion-label color="primary">{{ item }}</ion-label>
+      </ion-item>
+    </div>
+
+
     <h2>Section événements</h2>
     <ion-item>
       <ion-label color="primary" floating>Nom de l'événement</ion-label>
@@ -42,9 +50,7 @@
       <ion-datetime displayFormat="DD MMM YY h:mm A" pickerFormat="DD MMM YY h mm A" [(ngModel)]="appoiment.endDate"></ion-datetime>
     </ion-item>
     <button ion-button block (tap)="createEvent()">Créer l'évent</button><br />
-
-    {{ lecture }} <br />
-    {{ lecture2 }}
+    
   </ion-content>
 
   <ion-footer>
