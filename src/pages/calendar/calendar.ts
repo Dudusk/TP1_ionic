@@ -47,16 +47,21 @@ export class CalendarPage {
   }
 
   createCalendar(){
-    this.calendar.createCalendar(this.calendarName).then(
-      (msg) => { 
-        console.log(msg + " calendrier créé "); 
-        this.createToast("Calendrier créé : " + msg + " nom : " + this.calendarName, 3000, 'bottom');
-      },
-      (err) => { 
-        console.log(err + " calendrier failed"); 
-        this.createToast("Calendrier failed : " + err, 5000, 'bottom');        
-      }
-    );
+    if(this.appoiment.name != "" && this.appoiment.endDate != null && this.appoiment.startDate != null){
+      this.calendar.createCalendar(this.calendarName).then(
+        (msg) => { 
+          console.log(msg + " calendrier créé "); 
+          this.createToast("Calendrier créé : " + msg + " nom : " + this.calendarName, 3000, 'bottom');
+        },
+        (err) => { 
+          console.log(err + " calendrier failed"); 
+          this.createToast("Calendrier failed : " + err, 5000, 'bottom');        
+        }
+      );
+    } else {
+      this.createToast("Création failed : nom ou dates non entrées.", 5000, 'bottom');     
+    }
+    
   }
   //titre?: string, location?: string, note?: string, start?: Date, end?: Date
   createEvent(){

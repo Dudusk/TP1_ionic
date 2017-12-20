@@ -31,7 +31,7 @@
   <button ion-button block (tap)="createContact()">Créer le contact</button><br />
 
   <h2>Liste des contacts</h2>
-  {{allContacts | json}}
+  <!-- {{allContacts | json}} -->
   <ion-item *ngFor="let i = index; let item of allContacts">
     <ion-label color="primary" floating>{{ item.displayName }}</ion-label>
   </ion-item>

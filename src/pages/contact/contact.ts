@@ -55,7 +55,7 @@ export class ContactPage {
   }
 
   listContact(){
-    this.contacts.find(['displayName', 'name', 'phoneNumbers', 'emails'], {filter: "", multiple: true})
+    this.contacts.find(['displayName'], {filter: "", multiple: true})
     .then(data => {
       this.allContacts = data
       this.createToast("data : " + data, 100000, 'bottom')
