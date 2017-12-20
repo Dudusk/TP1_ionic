@@ -13,6 +13,7 @@ import { GooglemapPage } from '../pages/googlemap/googlemap';
 import { BarcodeScannerPage } from '../pages/barcode-scanner/barcode-scanner';
 import { CalendarPage } from '../pages/calendar/calendar';
 import { ContactPage } from '../pages/contact/contact';
+import { DbmetrePage } from '../pages/dbmetre/dbmetre';
 
 
 @Component({
@@ -39,7 +40,8 @@ export class MyApp {
       { title: 'Google Maps', component: GooglemapPage },
       { title: 'Scanner', component: BarcodeScannerPage },
       { title: 'Calendrier', component: CalendarPage },
-      { title: 'Contact', component: ContactPage }
+      { title: 'Contact', component: ContactPage },
+      { title: 'Lecteur decibel', component: DbmetrePage }
     ];
 
   }
