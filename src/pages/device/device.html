@@ -15,16 +15,13 @@
 
 
 <ion-content padding>
-  <ion-item>
-    <ion-label>
-      {{ information.uuid }}<br />
-      {{ information.cordova }}<br />
-      {{ information.model }}<br />
-      {{ information.platform }}<br />
-      {{ information.version }}<br />
-      {{ information.manufacturer }}<br />
-      {{ information.isVirtual }}<br />
-      {{ information.serial }}<br />
-    </ion-label>
-  </ion-item>
+  <h2>Informations concernant le téléphone</h2>
+  <ion-item><ion-label>uuid : {{ information.uuid }}</ion-label></ion-item>
+  <ion-item><ion-label>Cordova : {{ information.cordova }}</ion-label></ion-item>
+  <ion-item><ion-label>Model : {{ information.model }}</ion-label></ion-item>
+  <ion-item><ion-label>Platforme : {{ information.platform }}</ion-label></ion-item>
+  <ion-item><ion-label>Version : {{ information.version }}</ion-label></ion-item>
+  <ion-item><ion-label>Manufacturer : {{ information.manufacturer }}</ion-label></ion-item>
+  <ion-item><ion-label>Virtuel : {{ information.isVirtual }}</ion-label></ion-item>
+  <ion-item><ion-label>Serial : {{ information.serial }}</ion-label></ion-item>
 </ion-content>
