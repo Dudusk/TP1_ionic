@@ -13,7 +13,7 @@ import { GooglemapPage } from '../pages/googlemap/googlemap';
 import { BarcodeScannerPage } from '../pages/barcode-scanner/barcode-scanner';
 import { CalendarPage } from '../pages/calendar/calendar';
 import { ContactPage } from '../pages/contact/contact';
-import { DbmetrePage } from '../pages/dbmetre/dbmetre';
+import { DevicePage } from '../pages/device/device';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,7 +26,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { Calendar } from '@ionic-native/calendar';
 import { Vibration } from '@ionic-native/vibration';
 import { Contacts } from '@ionic-native/contacts';
-import { DBMeter } from '@ionic-native/db-meter';
+import { Device } from '@ionic-native/device';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,7 @@ import { DBMeter } from '@ionic-native/db-meter';
     BarcodeScannerPage,
     CalendarPage,
     ContactPage,
-    DbmetrePage
+    DevicePage
   ],
   imports: [
     BrowserModule,
@@ -60,7 +60,7 @@ import { DBMeter } from '@ionic-native/db-meter';
     BarcodeScannerPage,
     CalendarPage,
     ContactPage,
-    DbmetrePage
+    DevicePage
   ],
   providers: [
     StatusBar,
@@ -74,7 +74,7 @@ import { DBMeter } from '@ionic-native/db-meter';
     BarcodeScanner,
     Calendar,
     Contacts,
-    DBMeter,
+    Device,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

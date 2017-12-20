@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { DbmetrePage } from './dbmetre';
+import { DevicePage } from './device';
 
 @NgModule({
   declarations: [
-    DbmetrePage,
+    DevicePage,
   ],
   imports: [
-    IonicPageModule.forChild(DbmetrePage),
+    IonicPageModule.forChild(DevicePage),
   ],
 })
-export class DbmetrePageModule {}
+export class DevicePageModule {}
