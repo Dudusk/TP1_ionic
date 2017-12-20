@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, ToastController } from 'ionic-angular';
 import { DBMeter } from '@ionic-native/db-meter';
 
 /**
@@ -15,25 +15,41 @@ import { DBMeter } from '@ionic-native/db-meter';
   templateUrl: 'dbmetre.html',
 })
 export class DbmetrePage {
-  subscription: any
+  private subscription: any
+  private toast
 
-  constructor(private dbmetre: DBMeter) {
+  constructor(private dbmetre: DBMeter, private toastContro: ToastController) {
+  }
+
+  createToast(message, time, pos){
+    this.toast = this.toastContro.create({
+        message: message,
+        duration: time,
+        position: pos
+      });
+
+      this.toast.present();
   }
 
   start(){
     this.subscription  = this.dbmetre.start().subscribe(
-      data => console.log(data)
+      data => {
+        console.log(data)
+        this.createToast(data, 10000, 'bottom')
+      }
+
     );
   }
 
   check(){
     this.dbmetre.isListening().then(
-      (isListening: boolean) => console.log(isListening)
+      (isListening: boolean) => this.createToast(isListening, 10000, 'bottom')
     );
   }
 
   stop(){
     this.subscription.unsubscribe();
+    this.createToast("unsubscribed", 1000, 'bottom')
   }
 
   ionViewDidLoad() {
