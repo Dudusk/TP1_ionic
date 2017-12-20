@@ -28,9 +28,7 @@ export class DevicePage {
   }
 
   constructor(private device: Device) {
-  }
-
-  informations(){
+    console.log(this.device)
     this.information.uuid = this.device.uuid;
     this.information.cordova = this.device.cordova;
     this.information.model = this.device.model;
