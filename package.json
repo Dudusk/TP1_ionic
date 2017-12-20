@@ -23,6 +23,7 @@
     "@ionic-native/barcode-scanner": "^4.5.2",
     "@ionic-native/calendar": "^4.5.2",
     "@ionic-native/camera": "^4.4.2",
+    "@ionic-native/contacts": "^4.5.2",
     "@ionic-native/core": "4.3.2",
     "@ionic-native/geolocation": "^4.4.2",
     "@ionic-native/google-maps": "^4.4.2",
@@ -35,6 +36,7 @@
     "cordova-android": "^6.3.0",
     "cordova-plugin-calendar": "^5.0.0",
     "cordova-plugin-camera": "^3.0.0",
+    "cordova-plugin-contacts": "^3.0.0",
     "cordova-plugin-device": "^1.1.4",
     "cordova-plugin-file": "^5.0.0",
     "cordova-plugin-geolocation": "^3.0.0",
@@ -78,7 +80,8 @@
         "API_KEY_FOR_ANDROID": "AIzaSyAbn-m1H_fVKpDeWu5HMc561SggGmOu0ns",
         "API_KEY_FOR_IOS": "AIzaSyAbn-m1H_fVKpDeWu5HMc561SggGmOu0ns"
       },
-      "cordova-plugin-vibration": {}
+      "cordova-plugin-vibration": {},
+      "cordova-plugin-contacts": {}
     },
     "platforms": [
       "android"

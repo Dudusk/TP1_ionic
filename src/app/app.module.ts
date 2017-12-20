@@ -12,6 +12,7 @@ import { VibrationPage } from '../pages/vibration/vibration';
 import { GooglemapPage } from '../pages/googlemap/googlemap';
 import { BarcodeScannerPage } from '../pages/barcode-scanner/barcode-scanner';
 import { CalendarPage } from '../pages/calendar/calendar';
+import { ContactPage } from '../pages/contact/contact';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,6 +24,7 @@ import { GoogleMaps } from '@ionic-native/google-maps';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { Calendar } from '@ionic-native/calendar';
 import { Vibration } from '@ionic-native/vibration';
+import { Contacts } from '@ionic-native/contacts';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { Vibration } from '@ionic-native/vibration';
     VibrationPage,
     GooglemapPage,
     BarcodeScannerPage,
-    CalendarPage
+    CalendarPage,
+    ContactPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import { Vibration } from '@ionic-native/vibration';
     VibrationPage,
     GooglemapPage,
     BarcodeScannerPage,
-    CalendarPage
+    CalendarPage,
+    ContactPage
   ],
   providers: [
     StatusBar,
@@ -65,6 +69,7 @@ import { Vibration } from '@ionic-native/vibration';
     GoogleMaps,
     BarcodeScanner,
     Calendar,
+    Contacts,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
