@@ -22,7 +22,7 @@ export class ContactPage {
     tel: ""
   }
   private toast;
-  public allContacts: any
+  public allContacts = [] 
 
   constructor(private contacts: Contacts, private toastContro: ToastController) {
   }
@@ -57,8 +57,12 @@ export class ContactPage {
   listContact(){
     this.contacts.find(['displayName'], {filter: "", multiple: true})
     .then(data => {
-      this.allContacts = data
-      this.createToast("data : " + data, 10000, 'bottom')
+      for(let i = 0 ; i < data.length ; i++){
+        this.allContacts[i] = data[i]
+      }
+      
+      console.log(data)
+      this.createToast("Récupération de la liste des contacts avec succès.", 1000, 'bottom')
     });
   }
 
