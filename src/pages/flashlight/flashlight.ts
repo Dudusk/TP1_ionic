@@ -16,15 +16,19 @@ import { Flashlight } from '@ionic-native/flashlight';
 })
 export class FlashlightPage {
 
+  private status= ""
+
   constructor(private flash: Flashlight) {
   }
 
   turnOn(){
     this.flash.switchOn();
+    this.status = "Allumée";
   }
 
   turnOff(){
     this.flash.switchOff();
+    this.status = "Eteinte";
   }
 
   ionViewDidLoad() {
