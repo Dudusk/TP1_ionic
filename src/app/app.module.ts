@@ -14,6 +14,7 @@ import { BarcodeScannerPage } from '../pages/barcode-scanner/barcode-scanner';
 import { CalendarPage } from '../pages/calendar/calendar';
 import { ContactPage } from '../pages/contact/contact';
 import { DevicePage } from '../pages/device/device';
+import { FlashlightPage } from '../pages/flashlight/flashlight';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,6 +28,7 @@ import { Calendar } from '@ionic-native/calendar';
 import { Vibration } from '@ionic-native/vibration';
 import { Contacts } from '@ionic-native/contacts';
 import { Device } from '@ionic-native/device';
+import { Flashlight } from '@ionic-native/flashlight';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { Device } from '@ionic-native/device';
     BarcodeScannerPage,
     CalendarPage,
     ContactPage,
-    DevicePage
+    DevicePage,
+    FlashlightPage
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ import { Device } from '@ionic-native/device';
     BarcodeScannerPage,
     CalendarPage,
     ContactPage,
-    DevicePage
+    DevicePage,
+    FlashlightPage
   ],
   providers: [
     StatusBar,
@@ -75,6 +79,7 @@ import { Device } from '@ionic-native/device';
     Calendar,
     Contacts,
     Device,
+    Flashlight,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

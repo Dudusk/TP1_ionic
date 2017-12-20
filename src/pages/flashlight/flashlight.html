@@ -1,0 +1,20 @@
+<!--
+  Generated template for the FlashlightPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Device info</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <button ion-button (tap)="turnOn()"><ion-icon ios="ios-flash" md="md-flash"></ion-icon> Allumé</button>
+    <button ion-button (tap)="turnOff()"><ion-icon ios="ios-flash-outline" md="md-flash"></ion-icon> Eteindre</button>
+</ion-content>

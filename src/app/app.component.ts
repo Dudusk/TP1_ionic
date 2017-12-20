@@ -14,6 +14,7 @@ import { BarcodeScannerPage } from '../pages/barcode-scanner/barcode-scanner';
 import { CalendarPage } from '../pages/calendar/calendar';
 import { ContactPage } from '../pages/contact/contact';
 import { DevicePage } from '../pages/device/device';
+import { FlashlightPage } from '../pages/flashlight/flashlight';
 
 
 @Component({
@@ -41,7 +42,8 @@ export class MyApp {
       { title: 'Scanner', component: BarcodeScannerPage },
       { title: 'Calendrier', component: CalendarPage },
       { title: 'Contact', component: ContactPage },
-      { title: 'Devices info', component: DevicePage }
+      { title: 'Devices info', component: DevicePage },
+      { title: 'Lampe torche', component: FlashlightPage }
     ];
 
   }
