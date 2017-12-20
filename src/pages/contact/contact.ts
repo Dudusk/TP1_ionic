@@ -22,6 +22,7 @@ export class ContactPage {
     tel: ""
   }
   private toast;
+  public allContacts: any
 
   constructor(private contacts: Contacts, private toastContro: ToastController) {
   }
@@ -51,6 +52,13 @@ export class ContactPage {
         console.log(error)
       }
     );
+  }
+
+  listContact(){
+    this.contacts.find(['displayName', 'name', 'phoneNumbers', 'emails'], {filter: "", multiple: true})
+    .then(data => {
+      this.allContacts = data
+    });
   }
 
   ionViewDidLoad() {
