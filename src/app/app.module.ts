@@ -22,6 +22,7 @@ import { MediaCapture } from '@ionic-native/media-capture';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { Calendar } from '@ionic-native/calendar';
+import { Vibration } from '@ionic-native/vibration';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { Calendar } from '@ionic-native/calendar';
     SocialSharing,
     Geolocation,
     MediaCapture,
+    Vibration,
     GoogleMaps,
     BarcodeScanner,
     Calendar,
