@@ -25,8 +25,13 @@ export class CalendarPage {
     endDate: new Date(),
     info:""
    };
+   eventRange = {
+     startDate: new Date(),
+     endDate: new Date()
+   };
    public calendarName: string;
    public listesCalendar = [];
+   public listesEvent = [];
 
   constructor(private calendar: Calendar, private toastContro: ToastController) {
   }
@@ -72,10 +77,10 @@ export class CalendarPage {
   listeCalendar(){
     this.calendar.listCalendars().then(
       (result) => {
-        this.createToast( result, 10000, 'bottom');
         for(let i = 0 ; i < result.length ; i++){
           this.listesCalendar[i] = result[i].displayname;
         }
+        this.createToast( "Liste calendrier récupérée avec succès.", 1000, 'bottom');
       },
       (err) => {
         this.createToast( err, 10000, 'bottom');

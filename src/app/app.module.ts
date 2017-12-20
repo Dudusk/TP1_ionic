@@ -8,6 +8,7 @@ import { ListPage } from '../pages/list/list';
 import { CameraPage } from '../pages/camera/camera';
 import { GeolocalisationPage } from '../pages/geolocalisation/geolocalisation';
 import { VideoPage } from '../pages/video/video';
+import { VibrationPage } from '../pages/vibration/vibration';
 import { GooglemapPage } from '../pages/googlemap/googlemap';
 import { BarcodeScannerPage } from '../pages/barcode-scanner/barcode-scanner';
 import { CalendarPage } from '../pages/calendar/calendar';
@@ -30,6 +31,7 @@ import { Calendar } from '@ionic-native/calendar';
     CameraPage,
     GeolocalisationPage,
     VideoPage,
+    VibrationPage,
     GooglemapPage,
     BarcodeScannerPage,
     CalendarPage
@@ -46,6 +48,7 @@ import { Calendar } from '@ionic-native/calendar';
     CameraPage,
     GeolocalisationPage,
     VideoPage,
+    VibrationPage,
     GooglemapPage,
     BarcodeScannerPage,
     CalendarPage

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
 import { GoogleMaps, GoogleMap, GoogleMapsEvent, GoogleMapOptions } from '@ionic-native/google-maps';
 
@@ -20,10 +20,13 @@ export class GooglemapPage {
   
     constructor() {
     }
+
+    ngOnInit(){
+      this.createMap();      
+    }
   
     ionViewDidLoad() {
       console.log("Génération de la map..");
-      this.createMap();
     }
 
     createMap() {
@@ -31,15 +34,15 @@ export class GooglemapPage {
         camera: {
           target: {
   
-            lat: 43.3168,
-            lng: 5.36
+            lat: 43.3168547,
+            lng: 5.3684176
           },
           zoom: 18,
           tilt: 30
         }
       };
 
-      let elements: HTMLElement = document.getElementById('map_canvas');
+      let elements: HTMLElement = document.getElementById('map');
       this.map = GoogleMaps.create(elements, mapOptions);
 
       this.map.one(GoogleMapsEvent.MAP_READY)

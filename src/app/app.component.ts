@@ -8,6 +8,7 @@ import { ListPage } from '../pages/list/list';
 import { CameraPage } from '../pages/camera/camera';
 import { GeolocalisationPage } from '../pages/geolocalisation/geolocalisation';
 import { VideoPage } from '../pages/video/video';
+import { VibrationPage } from '../pages/vibration/vibration';
 import { GooglemapPage } from '../pages/googlemap/googlemap';
 import { BarcodeScannerPage } from '../pages/barcode-scanner/barcode-scanner';
 import { CalendarPage } from '../pages/calendar/calendar';
@@ -33,6 +34,7 @@ export class MyApp {
       { title: 'Camera', component: CameraPage },
       { title: 'Geolocalisation', component: GeolocalisationPage },
       { title: 'Video', component: VideoPage },
+      { title: 'Vibration', component: VibrationPage },
       { title: 'Google Maps', component: GooglemapPage },
       { title: 'Scanner', component: BarcodeScannerPage },
       { title: 'Calendrier', component: CalendarPage }

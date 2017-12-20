@@ -5,14 +5,17 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>vibration</ion-title>
-  </ion-navbar>
-
-</ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Vibration</ion-title>
+    </ion-navbar>
+  </ion-header>
 
 
 <ion-content padding>
-
+  <button ion-button block (tap)="vibrate1()">Vibration</button><br />
+  <button ion-button block (tap)="vibrateStartAndStop()">Vibration and stop</button><br />
+  <button ion-button block (tap)="vibrateStop()">Stop vibration</button><br />
 </ion-content>
