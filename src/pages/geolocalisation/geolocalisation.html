@@ -21,7 +21,7 @@
 	Latitude : {{ lati }} <br />
 	Longitude : {{ longi }} <br />
   Précision : {{ accuracy }}<br /><br /><br />
-  <ion-item>
-    <ion-label *ngFor="let item of arrayLocationWatch">{{ item }}</ion-label>
+  <ion-item *ngFor="let item of arrayLocationWatch">
+    <ion-label>{{ item }}</ion-label>
   </ion-item>
 </ion-content>
