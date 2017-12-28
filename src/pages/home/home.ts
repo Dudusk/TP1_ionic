@@ -13,7 +13,7 @@ export class HomePage {
   }
 
   openSet(){
-    this.settings.open("photos").then(
+    this.settings.open("settings").then(
       (error) => {
         console.error(error);
       }
