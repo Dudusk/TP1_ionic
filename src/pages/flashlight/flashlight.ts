@@ -25,14 +25,21 @@ export class FlashlightPage {
     this.flash.switchOn();
     this.status = "Allumée";
   }
+  
+  isAvailaible(){
+    this.flash.available().then(
+      (success) => {
+        this.status = "Disponible"
+      },
+      (error) => {
+        this.status = "Non disponible"
+      }
+    )
+  }
 
   turnOff(){
     this.flash.switchOff();
     this.status = "Eteinte";
-  }
-
-  toggled(){
-    this.flash.toggle();
   }
 
   ionViewDidLoad() {
