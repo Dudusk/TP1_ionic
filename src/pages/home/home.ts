@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { OpenNativeSettings } from '@ionic-native/open-native-settings';
 
 @Component({
   selector: 'page-home',
@@ -8,16 +7,8 @@ import { OpenNativeSettings } from '@ionic-native/open-native-settings';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, private settings: OpenNativeSettings) {
+  constructor(public navCtrl: NavController) {
 
-  }
-
-  openSet(){
-    this.settings.open("settings").then(
-      (error) => {
-        console.error(error);
-      }
-    )
   }
 
 }

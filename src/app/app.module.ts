@@ -31,7 +31,6 @@ import { Contacts } from '@ionic-native/contacts';
 import { Device } from '@ionic-native/device';
 import { Flashlight } from '@ionic-native/flashlight';
 import { Gyroscope } from '@ionic-native/gyroscope';
-import { OpenNativeSettings } from '@ionic-native/open-native-settings';
 
 @NgModule({
   declarations: [
@@ -86,7 +85,6 @@ import { OpenNativeSettings } from '@ionic-native/open-native-settings';
     Device,
     Flashlight,
     Gyroscope,
-    OpenNativeSettings,    
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
