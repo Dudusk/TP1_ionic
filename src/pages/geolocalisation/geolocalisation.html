@@ -15,12 +15,12 @@
 
 
 <ion-content padding>
-	<button ion-button block (tap)="geolocMe()">Géolocalise moi !</button>
-	<br />
+	
 	<h3><u>Actuellement : </u></h3>
 	Latitude : {{ lati }} <br />
 	Longitude : {{ longi }} <br />
   Précision : {{ accuracy }}<br /><br /><br />
+  Watch : 
   <ion-item *ngFor="let item of arrayLocationWatch">
     <ion-label>{{ item }}</ion-label>
   </ion-item>
