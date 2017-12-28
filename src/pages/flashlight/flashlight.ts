@@ -31,6 +31,10 @@ export class FlashlightPage {
     this.status = "Eteinte";
   }
 
+  toggled(){
+    this.flash.toggle();
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad FlashlightPage');
   }
