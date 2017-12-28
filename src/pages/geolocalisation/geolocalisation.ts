@@ -42,9 +42,7 @@ export class GeolocalisationPage {
 	    }
     });
 
-    this.geolocation.watchPosition().subscribe((data) => {
-      this.arrayLocationWatch.push(data.coords.latitude + data.coords.longitude);
-    });
+    
     // let watch = this.geolocation.watchPosition();
     // watch.subscribe((data) => {
     //   //console.log(resp);
@@ -55,6 +53,9 @@ export class GeolocalisationPage {
   }
 
   ionViewDidLoad() {
+    this.geolocation.watchPosition().subscribe((data) => {
+      this.arrayLocationWatch.push(data.coords.latitude + " " + data.coords.longitude);
+    });
     console.log('ionViewDidLoad GeolocalisationPage');
   }
 
