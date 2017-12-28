@@ -15,6 +15,7 @@ import { CalendarPage } from '../pages/calendar/calendar';
 import { ContactPage } from '../pages/contact/contact';
 import { DevicePage } from '../pages/device/device';
 import { FlashlightPage } from '../pages/flashlight/flashlight';
+import { GyroscopePage } from '../pages/gyroscope/gyroscope';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -29,6 +30,7 @@ import { Vibration } from '@ionic-native/vibration';
 import { Contacts } from '@ionic-native/contacts';
 import { Device } from '@ionic-native/device';
 import { Flashlight } from '@ionic-native/flashlight';
+import { Gyroscope } from '@ionic-native/gyroscope';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { Flashlight } from '@ionic-native/flashlight';
     CalendarPage,
     ContactPage,
     DevicePage,
-    FlashlightPage
+    FlashlightPage,
+    GyroscopePage
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,8 @@ import { Flashlight } from '@ionic-native/flashlight';
     CalendarPage,
     ContactPage,
     DevicePage,
-    FlashlightPage
+    FlashlightPage,
+    GyroscopePage
   ],
   providers: [
     StatusBar,
@@ -80,6 +84,7 @@ import { Flashlight } from '@ionic-native/flashlight';
     Contacts,
     Device,
     Flashlight,
+    Gyroscope,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

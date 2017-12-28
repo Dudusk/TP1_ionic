@@ -15,6 +15,7 @@ import { CalendarPage } from '../pages/calendar/calendar';
 import { ContactPage } from '../pages/contact/contact';
 import { DevicePage } from '../pages/device/device';
 import { FlashlightPage } from '../pages/flashlight/flashlight';
+import { GyroscopePage } from '../pages/gyroscope/gyroscope';
 
 
 @Component({
@@ -43,7 +44,8 @@ export class MyApp {
       { title: 'Calendrier', component: CalendarPage },
       { title: 'Contact', component: ContactPage },
       { title: 'Devices info', component: DevicePage },
-      { title: 'Lampe torche', component: FlashlightPage }
+      { title: 'Lampe torche', component: FlashlightPage },
+      { title: 'Gyroscope', component: GyroscopePage }
     ];
 
   }
