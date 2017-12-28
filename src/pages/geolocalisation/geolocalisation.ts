@@ -47,15 +47,23 @@ export class GeolocalisationPage {
     // watch.subscribe((data) => {
     //   //console.log(resp);
     //   this.arrayLocationWatch.push(data.coords.latitude + data.coords.longitude);
-    // 	//this.temp = "Latitude: " + data.coords.latitude + " Longitude: " + data.coords.longitude;
-    // 	//console.log(this.temp);
+    // 	this.temp = "Latitude: " + data.coords.latitude + " Longitude: " + data.coords.longitude;
+    // 	console.log(this.temp);
     // });
+
+    
   }
 
-  ionViewDidLoad() {
+  watch(){
     this.geolocation.watchPosition().subscribe((data) => {
       this.arrayLocationWatch.push(data.coords.latitude + " " + data.coords.longitude);
     });
+    console.log(this.arrayLocationWatch);
+  }
+
+  ionViewDidLoad() {
+    this.geolocMe();
+    this.watch()
     console.log('ionViewDidLoad GeolocalisationPage');
   }
 
