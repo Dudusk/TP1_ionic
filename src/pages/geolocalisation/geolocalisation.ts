@@ -19,6 +19,9 @@ export class GeolocalisationPage {
   lati: number;
 	longi: number;
   accuracy: number;
+  temp: string;
+
+  arrayLocationWatch = [];
 
   constructor(private geolocation: Geolocation) {
   }
@@ -41,9 +44,10 @@ export class GeolocalisationPage {
 
     let watch = this.geolocation.watchPosition();
     watch.subscribe((data) => {
-    	//console.log(resp);
-    	let temp = "Latitude: " + data.coords.latitude + " Longitude: " + data.coords.longitude;
-    	console.log(temp);
+      //console.log(resp);
+      this.arrayLocationWatch.push(data.coords.latitude + data.coords.longitude);
+    	//this.temp = "Latitude: " + data.coords.latitude + " Longitude: " + data.coords.longitude;
+    	//console.log(this.temp);
     });
   }
 

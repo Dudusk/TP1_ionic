@@ -42,11 +42,11 @@ export class GyroscopePage {
     this.gyro.getCurrent(this.options)
       .then((orientation: GyroscopeOrientation) => {
         console.log(orientation);
-         console.log(orientation.x, orientation.y, orientation.z, orientation.timestamp);
-         this.positionX = orientation.x;
-         this.positionY = orientation.y;
-         this.positionZ = orientation.z;
-         this.timestamp = orientation.timestamp
+        console.log(orientation.x, orientation.y, orientation.z, orientation.timestamp);
+        this.positionX = orientation.x;
+        this.positionY = orientation.y;
+        this.positionZ = orientation.z;
+        this.timestamp = orientation.timestamp
        })
       .catch((err) =>{
         console.log(err);
