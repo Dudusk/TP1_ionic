@@ -54,7 +54,7 @@ export class GeolocalisationPage {
     
   }
 
-  watch(){
+  watched(){
     this.geolocation.watchPosition().subscribe((data) => {
       this.arrayLocationWatch.push(data.coords.latitude + " " + data.coords.longitude);
     });
@@ -63,7 +63,7 @@ export class GeolocalisationPage {
 
   ionViewDidLoad() {
     this.geolocMe();
-    this.watch()
+    this.watched()
     console.log('ionViewDidLoad GeolocalisationPage');
   }
 
