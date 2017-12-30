@@ -21,6 +21,8 @@ export class GeolocalisationPage {
   accuracy: number;
   temp: string;
 
+  reloadPosition: number = 0;
+
   arrayLocationWatch = [];
 
   constructor(private geolocation: Geolocation) {
@@ -28,10 +30,6 @@ export class GeolocalisationPage {
 
   geolocMe(){
   	this.geolocation.getCurrentPosition().then((resp) => {
-	    //console.log(resp);
-	    console.log(resp.coords.latitude);
-	    console.log(resp.coords.longitude);
-
 	    this.lati = resp.coords.latitude;
     	this.longi = resp.coords.longitude;
       this.accuracy = resp.coords.accuracy;
@@ -56,7 +54,14 @@ export class GeolocalisationPage {
 
   watched(){
     this.geolocation.watchPosition().subscribe((data) => {
-      this.arrayLocationWatch.push(data.coords.latitude + " " + data.coords.longitude);
+      let newData = data.coords.latitude + " " + data.coords.longitude;
+      this.reloadPosition++;
+
+      if(this.arrayLocationWatch[this.reloadPosition -1] != newData){
+        this.arrayLocationWatch.push(newData);
+      }
+      
+      
     });
     console.log(this.arrayLocationWatch);
   }
