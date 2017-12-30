@@ -21,7 +21,7 @@ export class ShakePage {
   constructor(private shake: Shake) {
   }
 
-  startWatch(){
+  startWatchs(){
     this.watch = this.shake.startWatch(60).subscribe(() => {
       console.log(this.watch);
     });
@@ -31,7 +31,7 @@ export class ShakePage {
     console.log('ionViewDidLoad ShakePage');
   }
 
-  stopWatch(){
+  stopWatchs(){
     this.watch.unsubscribe();
   }
 
