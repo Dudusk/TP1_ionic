@@ -22,7 +22,6 @@ export class GeolocalisationPage {
   temp: string;
 
   reloadPosition: number = 0;
-
   arrayLocationWatch = [];
 
   constructor(private geolocation: Geolocation) {
@@ -39,29 +38,15 @@ export class GeolocalisationPage {
 	    	console.log("pas internet");
 	    }
     });
-
-    
-    // let watch = this.geolocation.watchPosition();
-    // watch.subscribe((data) => {
-    //   //console.log(resp);
-    //   this.arrayLocationWatch.push(data.coords.latitude + data.coords.longitude);
-    // 	this.temp = "Latitude: " + data.coords.latitude + " Longitude: " + data.coords.longitude;
-    // 	console.log(this.temp);
-    // });
-
-    
   }
 
   watched(){
     this.geolocation.watchPosition().subscribe((data) => {
       let newData = data.coords.latitude + " " + data.coords.longitude;
       this.reloadPosition++;
-
       if(this.arrayLocationWatch[this.reloadPosition -1] != newData){
         this.arrayLocationWatch.push(newData);
       }
-      
-      
     });
     console.log(this.arrayLocationWatch);
   }
