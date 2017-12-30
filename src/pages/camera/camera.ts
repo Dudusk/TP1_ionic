@@ -22,7 +22,7 @@ export class CameraPage {
   public toast: any;
 
   public email = {
-    sender : "",
+    receiver : "",
     sujet : ""
   }
   public message: string;
@@ -50,7 +50,7 @@ export class CameraPage {
    */
   shareEmail() {
     this.socialSharing.canShareViaEmail().then(() => {
-      this.socialSharing.shareViaEmail(this.message, this.email.sujet, [this.email.sender], [], null, this.base64Image).then(() => {
+      this.socialSharing.shareViaEmail(this.message, this.email.sujet, [this.email.receiver], [], null, this.base64Image).then(() => {
       }).catch(() => {
         console.error("Marche pas le mail");
       });
