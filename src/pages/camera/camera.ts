@@ -21,6 +21,10 @@ export class CameraPage {
   public base64ImageImported: string;
   public toast: any;
 
+  public email = {
+    sender : "",
+    sujet : ""
+  }
   public message: string;
 
   constructor(private camera: Camera, private toastContro: ToastController, private socialSharing: SocialSharing) {
@@ -46,7 +50,7 @@ export class CameraPage {
    */
   shareEmail() {
     this.socialSharing.canShareViaEmail().then(() => {
-      this.socialSharing.shareViaEmail(this.message, 'Subject', ['recipient@example.org'], [], null, this.base64Image).then(() => {
+      this.socialSharing.shareViaEmail(this.message, this.email.sujet, [this.email.sender], [], null, this.base64Image).then(() => {
       }).catch(() => {
         console.error("Marche pas le mail");
       });

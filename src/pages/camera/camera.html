@@ -25,10 +25,18 @@
       <ion-card-content>
         <ion-card-title>
           Photo prise
-          </ion-card-title>
+        </ion-card-title>
         <p>
           Partager la photo
         </p>
+        <ion-item>
+          <ion-label color="primary">Votre email :</ion-label>
+          <ion-input placeholder="Email" [(ngModel)]="email.sender"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary">Sujet :</ion-label>
+          <ion-input placeholder="Sujet" [(ngModel)]="email.sujet"></ion-input>
+        </ion-item>
         <ion-item>
           <ion-label color="primary">Message :</ion-label>
           <ion-input placeholder="Message" [(ngModel)]="message"></ion-input>
