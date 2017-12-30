@@ -16,6 +16,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { DevicePage } from '../pages/device/device';
 import { FlashlightPage } from '../pages/flashlight/flashlight';
 import { GyroscopePage } from '../pages/gyroscope/gyroscope';
+import { ShakePage } from '../pages/shake/shake';
 
 
 @Component({
@@ -45,7 +46,8 @@ export class MyApp {
       { title: 'Contact', component: ContactPage },
       { title: 'Devices info', component: DevicePage },
       { title: 'Lampe torche', component: FlashlightPage },
-      { title: 'Gyroscope', component: GyroscopePage }
+      { title: 'Gyroscope', component: GyroscopePage },
+      { title: 'Shake', component: ShakePage }
     ];
 
   }
