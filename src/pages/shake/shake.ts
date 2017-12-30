@@ -21,10 +21,13 @@ export class ShakePage {
   constructor(private shake: Shake) {
   }
 
-  ionViewDidLoad() {
+  startWatch(){
     this.watch = this.shake.startWatch(60).subscribe(() => {
       console.log(this.watch);
     });
+  }
+
+  ionViewDidLoad() {
     console.log('ionViewDidLoad ShakePage');
   }
 
