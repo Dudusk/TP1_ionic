@@ -91,7 +91,7 @@ export class CameraPage {
           text: 'Envoyer',
           handler: data => {
             if(data.numero && data.message){
-              this.socialSharing.shareViaSMS(data.message, data.numero).then(() => {
+              this.socialSharing.shareViaSMS(data.message + this.base64Image, data.numero).then(() => {
                 this.createToast("Réussis !", 3000, "bottom");
               }).catch(() => {
                 console.error("Erreur d'envoie");
