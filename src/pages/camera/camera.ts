@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, ToastController } from 'ionic-angular';
+import { IonicPage, ToastController, AlertController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { SocialSharing } from '@ionic-native/social-sharing';
 
@@ -21,13 +21,19 @@ export class CameraPage {
   public base64ImageImported: string;
   public toast: any;
 
+  public gne;
+
   public email = {
     receiver : "",
     sujet : ""
   }
   public message: string;
 
-  constructor(private camera: Camera, private toastContro: ToastController, private socialSharing: SocialSharing) {
+  constructor(private camera: Camera, private toastContro: ToastController, private socialSharing: SocialSharing, private alertCtrl: AlertController ) {
+  }
+
+  presentConfirm(titre: string, msg: string, params: any) {
+    
   }
 
   /**
@@ -38,12 +44,12 @@ export class CameraPage {
    */
   createToast(message, time, pos){
     this.toast = this.toastContro.create({
-        message: message,
-        duration: time,
-        position: pos
-      });
+      message: message,
+      duration: time,
+      position: pos
+    });
 
-      this.toast.present();
+    this.toast.present();
   }
   /**
    * Social Sharing
@@ -56,6 +62,46 @@ export class CameraPage {
       });
     }).catch(() => {
     });
+  }
+
+  shareSms(){
+    let alert = this.alertCtrl.create({
+      title: 'Numéro de téléphone',
+      message: 'A qui voulez-vous envoyer votre photo ?',
+      inputs: [
+        {
+          name: 'numero',
+          placeholder: 'Numero'
+        },
+        {
+          name: 'message',
+          placeholder: 'Votre message',
+          type: 'text'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Envoyer',
+          handler: data => {
+            if(data.numero && data.message){
+              this.socialSharing.shareViaSMS(data.message, data.numero).then(() => {
+                this.createToast("Réussis !", 3000, "bottom");
+              }).catch(() => {
+                console.error("Erreur d'envoie");
+              });
+            }
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
   shareInsta() {
@@ -97,7 +143,7 @@ export class CameraPage {
         targetWidth: 1000,
         targetHeight: 1000
     }).then((imageData) => {
-        this.createToast("Image prise avec succès !", 3000, 'bottom');
+        this.createToast("Image prise et enregistrée avec succès !", 3000, 'bottom');
         this.base64Image = "data:image/jpeg;base64," + imageData;
     }, (err) => {
         console.log(err);
