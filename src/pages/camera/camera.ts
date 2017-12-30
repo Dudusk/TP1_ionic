@@ -90,6 +90,20 @@ export class CameraPage {
     });
   }
 
+  screenAndSave(){
+    this.camera.getPicture({
+        destinationType: this.camera.DestinationType.DATA_URL,
+        saveToPhotoAlbum: true,
+        targetWidth: 1000,
+        targetHeight: 1000
+    }).then((imageData) => {
+        this.createToast("Image prise avec succès !", 3000, 'bottom');
+        this.base64Image = "data:image/jpeg;base64," + imageData;
+    }, (err) => {
+        console.log(err);
+    });
+  }
+
   importerImage(){
     const options: CameraOptions = {
       quality: 100,
