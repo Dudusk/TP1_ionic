@@ -5,13 +5,13 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <ion-navbar>
-      <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-      </button>
-      <ion-title>Scanner de code</ion-title>
-    </ion-navbar>
-  </ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Scanner de code</ion-title>
+  </ion-navbar>
+</ion-header>
 
 <ion-content padding>
   <button ion-button block (tap)="scanner()">Lancer le scanner..</button><br />
@@ -19,12 +19,10 @@
     <ion-item>
       <ion-label>Format :</ion-label>
       <ion-label>{{ format }}</ion-label>
-      <!-- <ion-content>{{ scannerDataForm }}</ion-content> -->
     </ion-item>
     <ion-item text-wrap>
       <ion-label>Texte :</ion-label>
       <ion-label>{{ text }}</ion-label>
-      <!-- <ion-content>{{ scannerDataText }}</ion-content> -->
     </ion-item>
   </div>
   <br />
@@ -32,7 +30,9 @@
   <div *ngIf="text == null">
       <ion-label>Rien pour l'instant..</ion-label>
   </div>
+
   <br />
+
   <ion-list>
     <ion-list-header>
       <ion-label class="label label-ios">
@@ -43,7 +43,4 @@
         <ion-label class="label label-ios">{{ item.format }}</ion-label>
     </ion-item>
   </ion-list>
-
- 
-
 </ion-content>

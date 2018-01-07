@@ -41,6 +41,7 @@ export class GeolocalisationPage {
   }
 
   watched(){
+    //Pour pas avoir une boucle du même positionnementS
     this.geolocation.watchPosition().subscribe((data) => {
       let newData = data.coords.latitude + " " + data.coords.longitude;
       this.reloadPosition++;
